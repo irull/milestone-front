@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <div className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
+      <div className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 sticky top-0">
         <div className="border-b border-white/10 py-3">
           <div className="container">
             <div className="flex items-center justify-center">
@@ -16,7 +16,7 @@ class Navbar extends Component {
                   to={"/dyo"}
                   className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 rounded-lg"
                 >
-                  Dyo
+                  DYO
                 </Link>
                 <Link
                   to={"/shop"}
