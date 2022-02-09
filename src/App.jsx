@@ -8,12 +8,12 @@ import OrderBy from "./Pages/OrderBy";
 import About from "./Pages/About";
 import ContactUs from "./Pages/Contacts";
 import Login from "./Pages/Login";
-import Header from "./Pages/Partials/Header/Hedaer";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <div className="App font-sans">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dyo" element={<Dyo />} />
