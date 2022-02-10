@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import WebFont from "webfontloader";
 import Dyo from "./Pages/Dyo";
 import Home from "./Pages/Home";
 import Shop from "./Pages/Shop";
@@ -10,6 +11,13 @@ import ContactUs from "./Pages/Contacts";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Navbar from "./Components/Navbar";
+import Bag from "./Pages/Bag";
+
+WebFont.load({
+  google: {
+    families: ["Poppins:200,300,400,500,600", "sans-serif"],
+  },
+});
 
 function App() {
   return (
@@ -24,6 +32,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/bag" element={<Bag />} />
       </Routes>
     </div>
   );

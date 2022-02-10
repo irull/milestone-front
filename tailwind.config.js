@@ -7,6 +7,10 @@ module.exports = {
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
+      container: {
+        center: true,
+        padding: "1rem",
+      },
     },
   },
   //add daisyui plugin
