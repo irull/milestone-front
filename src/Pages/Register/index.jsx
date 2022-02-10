@@ -1,5 +1,6 @@
 import React from "react";
-import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 export default function index() {
   return (
@@ -7,13 +8,15 @@ export default function index() {
       <div className="flex items-center justify-center min-h-screen bg-gray-100 antialiased tracking-tighter text-gray-800">
         <div className="w-1/4">
           <div className="bg-white p-6 rounded-2xl shadow">
-            <h1 className="font-semibold text-2xl uppercase mb-5">Login</h1>
+            <h1 className="font-semibold text-2xl mb-5 text-center text-gray-600">
+              Please Register
+            </h1>
             <div className="mb-5">
               <label
                 htmlFor="username"
                 className="block mb-2 font-medium text-sm text-gray-500"
               >
-                Nama
+                Name
               </label>
               <input
                 type="username"
@@ -38,33 +41,38 @@ export default function index() {
                 placeholder="Jhon@mail.com"
               />
             </div>
+            <div className="mb-5">
+              <label
+                htmlFor="password"
+                className="block mb-2 font-medium text-sm text-gray-500"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
+                placeholder="******"
+              />
+            </div>
+            <div className="mb-5">
+              <label
+                htmlFor="password"
+                className="block mb-2 font-medium text-sm text-gray-500"
+              >
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
+                placeholder="******"
+              />
+            </div>
+
             <div className="mb-2">
-              <label
-                htmlFor="password"
-                className="block mb-2 font-medium text-sm text-gray-500"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
-                placeholder="******"
-              />
-              <label
-                htmlFor="password"
-                className="block mb-2 font-medium text-sm text-gray-500"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
-                placeholder="******"
-              />
               <div className="my-5 flex justify-between">
                 <div>
                   <input
@@ -79,25 +87,23 @@ export default function index() {
                   Forgot Password?
                 </a>
               </div>
-              <button className="bg-blue-500 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 w-full">
+              <button className="bg-blue-600 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 w-full">
                 Login
               </button>
-              <div className="flex flex-col space-y-5">
-                <span className="flex items-center justify-center space-x-2 mt-3">
-                  <span className="h-px bg-gray-300 w-32"></span>
-                  <span className="font-normal text-gray-500">
-                    or register with
-                  </span>
-                  <span className="h-px bg-gray-300 w-32"></span>
+              <div class="flex flex-col space-y-5">
+                <span class="flex items-center justify-center space-x-2 mt-3">
+                  <span class="h-px bg-gray-300 w-32"></span>
+                  <span class="font-normal text-gray-500">or login with</span>
+                  <span class="h-px bg-gray-300 w-32"></span>
                 </span>
-                <div className="flex items-center justify-center space-x-2">
-                  <button className="bg-blue-700 p-2 rounded-full">
+                <div class="flex items-center justify-center space-x-2">
+                  <button className="bg-blue-700 p-2 rounded-full hover:bg-blue-800 transition duration-300">
                     <FaFacebookF className="text-white" />
                   </button>
-                  <button className="bg-blue-700 p-2 rounded-full">
-                    <FaGoogle className="text-white" />
+                  <button className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition duration-300">
+                    <FcGoogle size={"20"} />
                   </button>
-                  <button className="bg-blue-500 p-2 rounded-full">
+                  <button className="bg-blue-500 p-2 rounded-full hover:bg-blue-600 transition duration-300">
                     <FaTwitter className="text-white" />
                   </button>
                 </div>
