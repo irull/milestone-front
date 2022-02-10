@@ -6,7 +6,7 @@ export default function index() {
   return (
     <>
       <div className="flex items-center justify-center min-h-screen bg-gray-100 antialiased tracking-tighter text-gray-800">
-        <div className="w-1/4">
+        <div className="md:w-1/2.5  ">
           <div className="bg-white p-6 rounded-2xl shadow">
             <h1 className="font-semibold text-2xl mb-5 text-center text-gray-600">
               Please Register
@@ -38,7 +38,7 @@ export default function index() {
                 name="email"
                 id="email"
                 className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
-                placeholder="Jhon@mail.com"
+                placeholder="email@mail.com"
               />
             </div>
             <div className="mb-5">
@@ -64,9 +64,9 @@ export default function index() {
                 Confirm Password
               </label>
               <input
-                type="password"
-                name="password"
-                id="password"
+                type="password_confirm"
+                name="password_confirm"
+                id="password_confirm"
                 className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
                 placeholder="******"
               />
@@ -81,22 +81,30 @@ export default function index() {
                     id="remember"
                     className="accent-cyan-500 mr-2"
                   />
-                  <label htmlFor="remember">Remember me</label>
+                  <label htmlFor="remember" className="text-gray-400 text-sm">
+                    Saya setuju dengan{" "}
+                    <a className="text-cyan-500" href="/">
+                      Ketentuan Layanan
+                    </a>{" "}
+                    dan{" "}
+                    <a className="text-cyan-500" href="/">
+                      Kebijakan Privasi
+                    </a>
+                  </label>
                 </div>
-                <a href="/" className="visited:text-cyan-500">
-                  Forgot Password?
-                </a>
               </div>
               <button className="bg-blue-600 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 w-full">
-                Login
+                Register
               </button>
-              <div class="flex flex-col space-y-5">
-                <span class="flex items-center justify-center space-x-2 mt-3">
-                  <span class="h-px bg-gray-300 w-32"></span>
-                  <span class="font-normal text-gray-500">or login with</span>
-                  <span class="h-px bg-gray-300 w-32"></span>
+              <div className="flex flex-col space-y-5">
+                <span className="flex items-center justify-center space-x-2 mt-3">
+                  <span className="h-px bg-gray-300 md:w-32"></span>
+                  <span className="font-normal text-gray-500">
+                    or register with
+                  </span>
+                  <span className="h-px bg-gray-300 md:w-32"></span>
                 </span>
-                <div class="flex items-center justify-center space-x-2">
+                <div className="flex items-center justify-center space-x-2">
                   <button className="bg-blue-700 p-2 rounded-full hover:bg-blue-800 transition duration-300">
                     <FaFacebookF className="text-white" />
                   </button>
@@ -108,7 +116,7 @@ export default function index() {
                   </button>
                 </div>
               </div>
-              <p className="pt-5">
+              <p className="pt-5 text-gray-500">
                 Alredy registered ?
                 <a href="/login" className="text-cyan-500 pl-1">
                   Login

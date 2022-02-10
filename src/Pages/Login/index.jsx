@@ -6,7 +6,7 @@ export default function index() {
   return (
     <>
       <div className="flex items-center justify-center min-h-screen bg-gray-100 antialiased tracking-tighter text-gray-800">
-        <div className="w-1/4">
+        <div className="md:w-1/2.5">
           <div className="bg-white p-6 rounded-2xl shadow">
             <h1 className="font-semibold text-2xl mb-5 text-center text-gray-600">
               Login
@@ -23,7 +23,7 @@ export default function index() {
                 name="email"
                 id="email"
                 className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
-                placeholder="Jhon@mail.com"
+                placeholder="email@mail.com"
               />
             </div>
             <div className="mb-2">
@@ -48,7 +48,9 @@ export default function index() {
                     id="remember"
                     className="accent-cyan-500 mr-2"
                   />
-                  <label htmlFor="remember">Remember me</label>
+                  <label className="text-gray-500" htmlFor="remember">
+                    Remember me
+                  </label>
                 </div>
                 <a href="/" className="visited:text-cyan-500">
                   Forgot Password?
@@ -59,9 +61,9 @@ export default function index() {
               </button>
               <div class="flex flex-col space-y-5">
                 <span class="flex items-center justify-center space-x-2 mt-3">
-                  <span class="h-px bg-gray-300 w-32"></span>
+                  <span class="h-px bg-gray-300 md:w-32"></span>
                   <span class="font-normal text-gray-500">or login with</span>
-                  <span class="h-px bg-gray-300 w-32"></span>
+                  <span class="h-px bg-gray-300 md:w-32"></span>
                 </span>
                 <div class="flex items-center justify-center space-x-2">
                   <button className="bg-blue-700 p-2 rounded-full hover:bg-blue-800 transition duration-300">
@@ -75,7 +77,7 @@ export default function index() {
                   </button>
                 </div>
               </div>
-              <p className="pt-5">
+              <p className="pt-5 text-gray-500">
                 Don't have an account?
                 <a href="/register" className="text-cyan-500 pl-1">
                   Register
