@@ -8,6 +8,7 @@ import OrderBy from "./Pages/OrderBy";
 import About from "./Pages/About";
 import ContactUs from "./Pages/Contacts";
 import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 import Navbar from "./Components/Navbar";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );

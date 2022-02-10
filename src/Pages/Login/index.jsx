@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../Components/Button";
+import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
 export default function index() {
   return (
@@ -23,7 +23,7 @@ export default function index() {
                 placeholder="Jhon@mail.com"
               />
             </div>
-            <div className="mb-5">
+            <div className="mb-2">
               <label
                 htmlFor="password"
                 className="block mb-2 font-medium text-sm text-gray-500"
@@ -48,13 +48,33 @@ export default function index() {
                   <label htmlFor="remember">Remember me</label>
                 </div>
                 <a href="/" className="visited:text-cyan-500">
-                  Forgot Password
+                  Forgot Password?
                 </a>
               </div>
-              <Button>Login</Button>
+              <button className="bg-blue-500 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 w-full">
+                Login
+              </button>
+              <div class="flex flex-col space-y-5">
+                <span class="flex items-center justify-center space-x-2 mt-3">
+                  <span class="h-px bg-gray-300 w-32"></span>
+                  <span class="font-normal text-gray-500">or login with</span>
+                  <span class="h-px bg-gray-300 w-32"></span>
+                </span>
+                <div class="flex items-center justify-center space-x-2">
+                  <button className="bg-blue-700 p-2 rounded-full">
+                    <FaFacebookF className="text-white" />
+                  </button>
+                  <button className="bg-blue-700 p-2 rounded-full">
+                    <FaGoogle className="text-white" />
+                  </button>
+                  <button className="bg-blue-500 p-2 rounded-full">
+                    <FaTwitter className="text-white" />
+                  </button>
+                </div>
+              </div>
               <p className="pt-5">
                 Don't have an account?
-                <a href="/register" className="text-blue-500 pl-1">
+                <a href="/register" className="text-cyan-500 pl-1">
                   Register
                 </a>
               </p>
