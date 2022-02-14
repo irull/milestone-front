@@ -9,7 +9,7 @@ export default function index() {
         <title>Milestone | Blog</title>
       </Helmet>
       <div>
-        <h1>Halaman About</h1>
+        <h1>halaman Blog</h1>{" "}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
-import { FaShoppingBag } from "react-icons/fa";
-import MobileNav from "./MobileNav";
+import { FaShoppingBag, FaAngleDown, FaRegMoon } from "react-icons/fa";
 import NavLink from "./NavLink";
+import MobileNav from "./MobileNav";
 
 export default function Navbar() {
   const auth = {
@@ -12,33 +12,59 @@ export default function Navbar() {
   };
   return (
     <>
-      <div className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
+      <div className="bg-gray-900">
         <MobileNav />
-        <div className="hidden md:block border-b border-white/10 py-3">
+        <div className="hidden lg:block border-b border-white/10 py-1">
           <div className="container">
             <nav className="flex items-center justify-between">
               <div className="flex items-center gap-x-2">
-                <NavLink to={"/"}>milestone</NavLink>
+                <NavLink to={"/"} className="font-semibold text-md mr-6">
+                  milestone
+                </NavLink>
                 <NavLink to={"/dyo"}>DYO</NavLink>
-                <NavLink to={"/shop"}>Shop</NavLink>
-                <NavLink to={"/orderby"}>Order by</NavLink>
+                <NavLink to={"/shop"} className="flex items-center">
+                  Shop
+                  <FaAngleDown className="ml-1" />
+                </NavLink>
+                <NavLink to={"/orderby"} className=" flex items-center ">
+                  Order by
+                  <FaAngleDown className="ml-1" />
+                </NavLink>
                 <NavLink to={"/about"}>About Us</NavLink>
                 <NavLink to={"/contact"}>Contact Us</NavLink>
+                <NavLink to={"/blog"}>Blog</NavLink>
               </div>
               {auth.check ? (
                 <div className="flex items-center gap-x-2">
-                  <NavLink to={"/login"}>{auth.user.name}</NavLink>
+                  <div className="flex ">
+                    <NavLink
+                      to={"/login"}
+                      className="flex items-center font-semibold text-sm"
+                    >
+                      {auth.user.name}
+                      <FaAngleDown className="ml-1" />
+                    </NavLink>
+                  </div>
                   <NavLink to={"/bag"}>
-                    {" "}
                     <FaShoppingBag size={20} />
+                  </NavLink>
+                  <NavLink to={"/"}>
+                    <FaRegMoon size={20} />
                   </NavLink>
                 </div>
               ) : (
                 <div className="flex items-center gap-x-2">
-                  <NavLink to={"/login"}>Login</NavLink>
+                  <NavLink
+                    className="font-semibold text-sm hover:bg-none"
+                    to={"/login"}
+                  >
+                    Login
+                  </NavLink>
                   <NavLink to={"/bag"}>
-                    {" "}
                     <FaShoppingBag size={20} />
+                  </NavLink>
+                  <NavLink to={"/"}>
+                    <FaRegMoon size={20} />
                   </NavLink>
                 </div>
               )}

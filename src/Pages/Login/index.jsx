@@ -59,13 +59,15 @@ export default function index() {
               <button className="bg-blue-600 py-2.5 rounded-full font-semibold text-white hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 w-full">
                 Login
               </button>
-              <div class="flex flex-col space-y-5">
-                <span class="flex items-center justify-center space-x-2 mt-3">
-                  <span class="h-px bg-gray-300 md:w-32"></span>
-                  <span class="font-normal text-gray-500">or login with</span>
-                  <span class="h-px bg-gray-300 md:w-32"></span>
+              <div className="flex flex-col space-y-5">
+                <span className="flex items-center justify-center space-x-2 mt-3">
+                  <span className="h-px bg-gray-300 md:w-32"></span>
+                  <span className="font-normal text-gray-500">
+                    or login with
+                  </span>
+                  <span className="h-px bg-gray-300 md:w-32"></span>
                 </span>
-                <div class="flex items-center justify-center space-x-2">
+                <div className="flex items-center justify-center space-x-2">
                   <button className="bg-blue-700 p-2 rounded-full hover:bg-blue-800 transition duration-300">
                     <FaFacebookF className="text-white" />
                   </button>

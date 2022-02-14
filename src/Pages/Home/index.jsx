@@ -7,21 +7,30 @@ import Card from "../../Components/Card";
 function Home() {
   return (
     <>
-      <div className="bg-gray-200 min-h-screen">
+      <div className="min-h-screen">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Home</title>
+          <title>Milestone</title>
         </Helmet>
         <div className="text-center space-x-2">
           <h1>Halaman Home</h1>
           <button className="bg-blue-500 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200">
             Button inline
           </button>
-          <Button>Hallo button primary</Button>
-          <Button>Hallo button secondary</Button>
-          <Button className="bg-cyan-500 focus:ring-cyan-200 hover:bg-cyan-700">
-            Hallo
+          <Button Link to="/blog">
+            BUtton Compinent
           </Button>
+          <Button>Hallo Component</Button>
+          <Button className="bg-cyan-500 focus:ring-cyan-200 hover:bg-cyan-700">
+            Blog
+          </Button>
+
+          <Link
+            to={"/blog"}
+            className="bg-blue-500 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
+          >
+            Blog With Link
+          </Link>
           <div className="flex mx-5">
             <Card />
             <Card />
