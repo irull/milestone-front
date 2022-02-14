@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { FaShoppingBag, FaAngleDown, FaRegMoon } from "react-icons/fa";
 import NavLink from "./NavLink";
 import MobileNav from "./MobileNav";
+import { Menu, Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const auth = {
@@ -22,14 +24,94 @@ export default function Navbar() {
                   milestone
                 </NavLink>
                 <NavLink to={"/dyo"}>DYO</NavLink>
-                <NavLink to={"/shop"} className="flex items-center">
-                  Shop
-                  <FaAngleDown className="ml-1" />
-                </NavLink>
-                <NavLink to={"/orderby"} className=" flex items-center ">
-                  Order by
-                  <FaAngleDown className="ml-1" />
-                </NavLink>
+                <Menu as={"div"} className="relative inline-block text-left">
+                  <Menu.Button className="flex justify-center w-auto  text-sm font-medium text-white ">
+                    <NavLink to={""} className="flex items-center">
+                      Shop
+                      <FaAngleDown className="ml-1" />
+                    </NavLink>
+                  </Menu.Button>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        <Link
+                          to="/dyo"
+                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
+                        >
+                          DYO
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/dyo"
+                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
+                        >
+                          DYO
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/dyo"
+                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
+                        >
+                          DYO
+                        </Link>
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+                <Menu as={"div"} className="relative inline-block text-left">
+                  <Menu.Button className="flex justify-center w-auto text-sm font-medium text-white ">
+                    <NavLink to={""} className="flex items-center">
+                      Order by
+                      <FaAngleDown className="ml-1" />
+                    </NavLink>
+                  </Menu.Button>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        <Link
+                          to="/dyo"
+                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
+                        >
+                          DYO
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/dyo"
+                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
+                        >
+                          DYO
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/dyo"
+                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
+                        >
+                          DYO
+                        </Link>
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
                 <NavLink to={"/about"}>About Us</NavLink>
                 <NavLink to={"/contact"}>Contact Us</NavLink>
                 <NavLink to={"/blog"}>Blog</NavLink>
