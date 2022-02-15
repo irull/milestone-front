@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 export default function index() {
   return (
@@ -8,13 +9,13 @@ export default function index() {
       <div className="flex items-center justify-center min-h-screen bg-gray-100 antialiased tracking-tighter text-gray-800">
         <div className="md:w-1/2.5  ">
           <div className="bg-white p-6 rounded-2xl shadow">
-            <h1 className="font-semibold text-2xl mb-5 text-center text-gray-600">
+            <h1 className="font-semibold text-2xl mb-5 text-center text-gray-600 tracking-wider">
               Please Register
             </h1>
             <div className="mb-5">
               <label
                 htmlFor="username"
-                className="block mb-2 font-medium text-sm text-gray-500"
+                className="block mb-2 font-medium tracking-wider text-sm text-gray-500"
               >
                 Name
               </label>
@@ -29,7 +30,7 @@ export default function index() {
             <div className="mb-5">
               <label
                 htmlFor="email"
-                className="block mb-2 font-medium text-sm text-gray-500"
+                className="block mb-2 font-medium text-sm tracking-wider text-gray-500"
               >
                 Email
               </label>
@@ -44,7 +45,7 @@ export default function index() {
             <div className="mb-5">
               <label
                 htmlFor="password"
-                className="block mb-2 font-medium text-sm text-gray-500"
+                className="block mb-2 font-medium text-sm tracking-wider text-gray-500"
               >
                 Password
               </label>
@@ -59,7 +60,7 @@ export default function index() {
             <div className="mb-5">
               <label
                 htmlFor="password"
-                className="block mb-2 font-medium text-sm text-gray-500"
+                className="block mb-2 font-medium text-sm tracking-wider text-gray-500"
               >
                 Confirm Password
               </label>
@@ -93,13 +94,13 @@ export default function index() {
                   </label>
                 </div>
               </div>
-              <button className="bg-blue-600 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 w-full">
+              <button className="bg-blue-600 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 w-full tracking-wider">
                 Register
               </button>
               <div className="flex flex-col space-y-5">
                 <span className="flex items-center justify-center space-x-2 mt-3">
                   <span className="h-px bg-gray-300 md:w-32"></span>
-                  <span className="font-normal text-gray-500">
+                  <span className=" text-gray-500 text-sm font-medium tracking-tight">
                     or register with
                   </span>
                   <span className="h-px bg-gray-300 md:w-32"></span>
@@ -116,11 +117,11 @@ export default function index() {
                   </button>
                 </div>
               </div>
-              <p className="pt-5 text-gray-500">
+              <p className="pt-5 text-gray-500 text-sm font-medium tracking-tight">
                 Alredy registered ?
-                <a href="/login" className="text-cyan-500 pl-1">
+                <Link to="/login" className="text-cyan-500 pl-1">
                   Login
-                </a>
+                </Link>
               </p>
             </div>
           </div>
