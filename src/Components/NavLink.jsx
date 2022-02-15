@@ -8,7 +8,7 @@ export default function NavLink({ children, to, className }) {
         to={to}
         className={`${
           className ? className : "font-medium text-sm"
-        } text-gray-300 hover:text-white hover:bg-gray-700/40 rounded-lg  px-4 py-2`}
+        } text-gray-300 hover:text-white px-4 py-2`}
       >
         {children}
       </Link>

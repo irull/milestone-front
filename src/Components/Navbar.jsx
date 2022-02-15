@@ -4,10 +4,11 @@ import NavLink from "./NavLink";
 import MobileNav from "./MobileNav";
 import { Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
+import Line from "./Line";
 
 export default function Navbar() {
   const auth = {
-    check: false,
+    check: true,
     user: {
       name: "Dwinawan Susilo",
     },
@@ -24,108 +25,195 @@ export default function Navbar() {
                   milestone
                 </NavLink>
                 <NavLink to={"/dyo"}>DYO</NavLink>
+                {/* Shop */}
                 <Menu as={"div"} className="relative inline-block text-left">
-                  <Menu.Button className="flex justify-center w-auto  text-sm font-medium text-white ">
-                    <NavLink to={""} className="flex items-center">
-                      Shop
-                      <FaAngleDown className="ml-1" />
-                    </NavLink>
-                  </Menu.Button>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        <Link
-                          to="/dyo"
-                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
-                        >
-                          DYO
-                        </Link>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <Link
-                          to="/dyo"
-                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
-                        >
-                          DYO
-                        </Link>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <Link
-                          to="/dyo"
-                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
-                        >
-                          DYO
-                        </Link>
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
+                  {({ open }) => (
+                    <>
+                      <Menu.Button className="flex justify-center w-auto  text-sm font-medium text-white group">
+                        <span className="flex items-center font-medium text-sm text-gray-300 hover:text-white px-4 py-2">
+                          Shop
+                          <FaAngleDown
+                            className={`${
+                              open
+                                ? "transform transition duration-300 rotate-180"
+                                : ""
+                            } text-gray-300 ml-1 transition duration-300`}
+                          />
+                        </span>
+                      </Menu.Button>
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-200"
+                        enterFrom="opacity-0 translate-y-1"
+                        enterTo="opacity-100 translate-y-0"
+                        leave="transition ease-in duration-150"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 translate-y-1"
+                      >
+                        <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
+                          <Menu.Item>
+                            <Link
+                              to="/"
+                              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                            >
+                              Pricelist
+                            </Link>
+                          </Menu.Item>
+                          <Menu.Item>
+                            <Link
+                              to="/"
+                              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                            >
+                              Custom Order
+                            </Link>
+                          </Menu.Item>
+                          <Menu.Item>
+                            <Link
+                              to="/"
+                              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                            >
+                              Catalog
+                            </Link>
+                          </Menu.Item>
+                        </Menu.Items>
+                      </Transition>
+                    </>
+                  )}
                 </Menu>
+                {/* End Shop */}
+
+                {/* Order by */}
                 <Menu as={"div"} className="relative inline-block text-left">
-                  <Menu.Button className="flex justify-center w-auto text-sm font-medium text-white ">
-                    <NavLink to={""} className="flex items-center">
-                      Order by
-                      <FaAngleDown className="ml-1" />
-                    </NavLink>
-                  </Menu.Button>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        <Link
-                          to="/dyo"
-                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
-                        >
-                          DYO
-                        </Link>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <Link
-                          to="/dyo"
-                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
-                        >
-                          DYO
-                        </Link>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <Link
-                          to="/dyo"
-                          className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
-                        >
-                          DYO
-                        </Link>
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
+                  {({ open }) => (
+                    <>
+                      <Menu.Button className="flex justify-center w-auto  text-sm font-medium text-white group">
+                        <span className="flex items-center font-medium text-sm text-gray-300 hover:text-white px-4 py-2">
+                          Order by
+                          <FaAngleDown
+                            className={`${
+                              open
+                                ? "transform transition duration-300 rotate-180"
+                                : ""
+                            } text-gray-300 ml-1 transition duration-300`}
+                          />
+                        </span>
+                      </Menu.Button>
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-200"
+                        enterFrom="opacity-0 translate-y-1"
+                        enterTo="opacity-100 translate-y-0"
+                        leave="transition ease-in duration-150"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 translate-y-1"
+                      >
+                        <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
+                          <Menu.Item>
+                            <Link
+                              to="/"
+                              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                            >
+                              Pricelist
+                            </Link>
+                          </Menu.Item>
+                          <Menu.Item>
+                            <Link
+                              to="/"
+                              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                            >
+                              Custom Order
+                            </Link>
+                          </Menu.Item>
+                          <Menu.Item>
+                            <Link
+                              to="/"
+                              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                            >
+                              Catalog
+                            </Link>
+                          </Menu.Item>
+                        </Menu.Items>
+                      </Transition>
+                    </>
+                  )}
                 </Menu>
-                <NavLink to={"/about"}>About Us</NavLink>
-                <NavLink to={"/contact"}>Contact Us</NavLink>
+                {/* End Orderby */}
+
+                <NavLink to={"/about"}>About</NavLink>
+                <NavLink to={"/contact"}>Contact</NavLink>
                 <NavLink to={"/blog"}>Blog</NavLink>
               </div>
+              {/* Menu Profile (Login Session) */}
               {auth.check ? (
                 <div className="flex items-center gap-x-2">
                   <div className="flex ">
-                    <NavLink
-                      to={"/login"}
-                      className="flex items-center font-semibold text-sm"
+                    <Menu
+                      as={"div"}
+                      className="relative inline-block text-left"
                     >
-                      {auth.user.name}
-                      <FaAngleDown className="ml-1" />
-                    </NavLink>
+                      {({ open }) => (
+                        <>
+                          <Menu.Button className="flex justify-center w-auto text-sm font-medium text-white group">
+                            <span className="flex items-center font-medium text-sm text-gray-300 hover:text-white px-4 py-2">
+                              {auth.user.name}
+                              <FaAngleDown
+                                className={`${
+                                  open
+                                    ? "transform transition duration-300 rotate-180"
+                                    : ""
+                                } text-gray-300 ml-1 transition duration-300`}
+                              />
+                            </span>
+                          </Menu.Button>
+                          <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-200"
+                            enterFrom="opacity-0 translate-y-1"
+                            enterTo="opacity-100 translate-y-0"
+                            leave="transition ease-in duration-150"
+                            leaveFrom="opacity-100 translate-y-0"
+                            leaveTo="opacity-0 translate-y-1"
+                          >
+                            <Menu.Items className="absolute right-0 w-52 mt-2 origin-top-right bg-gray-900 d rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
+                              <Menu.Item>
+                                <Link
+                                  to="/"
+                                  className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                                >
+                                  View profile
+                                </Link>
+                              </Menu.Item>
+                              <Menu.Item>
+                                <Link
+                                  to="/"
+                                  className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                                >
+                                  Edit Profile
+                                </Link>
+                              </Menu.Item>
+                              <Menu.Item>
+                                <Link
+                                  to="/dyo"
+                                  className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                                >
+                                  Change password
+                                </Link>
+                              </Menu.Item>
+                              <Line />
+                              <Menu.Item>
+                                <Link
+                                  to="/dyo"
+                                  className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                                >
+                                  Logout
+                                </Link>
+                              </Menu.Item>
+                            </Menu.Items>
+                          </Transition>
+                        </>
+                      )}
+                    </Menu>
+                    {/* End Menu Profile (Login Session) */}
                   </div>
                   <NavLink to={"/bag"}>
                     <FaShoppingBag size={20} />
@@ -135,6 +223,7 @@ export default function Navbar() {
                   </NavLink>
                 </div>
               ) : (
+                // menu login (session not login)
                 <div className="flex items-center gap-x-2">
                   <NavLink
                     className="font-semibold text-sm hover:bg-none"

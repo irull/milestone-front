@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { RiMenu4Fill } from "react-icons/ri";
 import { FaRegMoon, FaShoppingBag, FaAngleDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -17,18 +17,18 @@ export default function MobileNav() {
       <div className="flex items-center">
         <FaRegMoon size={20} className="text-white mr-3" />
         <FaShoppingBag size={23} className="text-white mr-3" />
-        <Menu.Button>
+        <Menu.Button className="hover:animate-pulse">
           <RiMenu4Fill size={30} className="text-white focus:outline-none" />
         </Menu.Button>
       </div>
       <Transition
         as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
+        enter="transition ease-out duration-200"
+        enterFrom="opacity-0 translate-y-1"
+        enterTo="opacity-100 translate-y-0"
+        leave="transition ease-in duration-150"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 translate-y-1"
       >
         <Menu.Items
           as="div"
@@ -37,47 +37,139 @@ export default function MobileNav() {
           <Menu.Item>
             <Link
               to="/dyo"
-              className="px-4 py-2 hover:bg-slate-200 text-gray-200 hover:text-black flex"
+              className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
             >
               DYO
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link
-              to="/shop"
-              className="px-4 py-2 hover:bg-gray-100 text-gray-200 hover:text-black flex items-center"
-            >
-              Shop <FaAngleDown className="ml-1" />
-            </Link>
+            <>
+              <Disclosure>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button
+                      className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex items-center text-sm font-medium w-full
+                    "
+                    >
+                      <span>Shop</span>
+                      <FaAngleDown
+                        className={`${
+                          open ? "transform rotate-180" : ""
+                        } text-gray-300 ml-1 transition duration-300`}
+                      />
+                    </Disclosure.Button>
+                    <Transition
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <Disclosure.Panel className="px-4 text-sm text-gray-500">
+                        <Menu.Item>
+                          <Link
+                            to="/"
+                            className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
+                          >
+                            Shop 1
+                          </Link>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <Link
+                            to="/"
+                            className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
+                          >
+                            Shop 2
+                          </Link>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <Link
+                            to="/"
+                            className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
+                          >
+                            Shop 3
+                          </Link>
+                        </Menu.Item>
+                      </Disclosure.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Disclosure>
+              <Disclosure as="div" className="mt-0">
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex items-center text-sm font-medium w-full">
+                      <span>Order by</span>
+                      <FaAngleDown
+                        className={`${
+                          open ? "transform rotate-180" : ""
+                        }  text-gray-300 ml-1 transition duration-300`}
+                      />
+                    </Disclosure.Button>
+                    <Transition
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <Disclosure.Panel className="px-4 text-sm text-gray-500">
+                        <Menu.Item>
+                          <Link
+                            to="/"
+                            className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
+                          >
+                            Order by 1
+                          </Link>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <Link
+                            to="/about"
+                            className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
+                          >
+                            Order by 2
+                          </Link>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <Link
+                            to="/about"
+                            className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
+                          >
+                            Order by 3
+                          </Link>
+                        </Menu.Item>
+                      </Disclosure.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Disclosure>
+            </>
           </Menu.Item>
-          <Menu.Item>
-            <Link
-              to="/orderby"
-              className="px-4 py-2 hover:bg-gray-100 text-gray-200 hover:text-black flex items-center"
-            >
-              Order by <FaAngleDown className="ml-1" />
-            </Link>
-          </Menu.Item>
+
           <Menu.Item>
             <Link
               to="/about"
-              className="px-4 py-2 hover:bg-gray-100 text-gray-200 hover:text-black flex"
+              className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
             >
-              About Us
+              About
             </Link>
           </Menu.Item>
           <Menu.Item>
             <Link
               to="/contact"
-              className="px-4 py-2 hover:bg-gray-100 text-gray-200 hover:text-black flex"
+              className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
             >
-              Contact Us
+              Contact
             </Link>
           </Menu.Item>
           <Menu.Item>
             <Link
               to="/blog"
-              className="px-4 py-2 hover:bg-gray-100 text-gray-200 hover:text-black flex"
+              className="px-4 py-2 text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
             >
               Blog
             </Link>
@@ -86,7 +178,7 @@ export default function MobileNav() {
           <Menu.Item>
             <Link
               to="/login"
-              className="px-4 py-2 hover:bg-gray-100 text-gray-200 hover:text-black flex"
+              className="px-4 py-2  text-gray-200 hover:text-white hover:bg-gray-700/40 flex"
             >
               Login
             </Link>
