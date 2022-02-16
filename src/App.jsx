@@ -1,11 +1,9 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import WebFont from "webfontloader";
 import Dyo from "./Pages/Dyo";
 import Home from "./Pages/Home";
-import Shop from "./Pages/Shop";
-import OrderBy from "./Pages/OrderBy";
 import About from "./Pages/About";
 import ContactUs from "./Pages/Contacts";
 import Blog from "./Pages/Blog";
@@ -14,6 +12,12 @@ import Register from "./Pages/Register";
 import Navbar from "./Components/Navbar";
 import Bag from "./Pages/Bag";
 import Page404 from "./Pages/Page404";
+import Catalog from "./Pages/Order/Catalog";
+import CustomOrder from "./Pages/Order/CustomOrder";
+import Pricelist from "./Pages/Order/Pricelist";
+import Aksesoris from "./Pages/Shop/Aksesoris";
+import Anak from "./Pages/Shop/Anak";
+import Dewasa from "./Pages/Shop/Dewasa";
 
 WebFont.load({
   google: {
@@ -28,14 +32,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dyo" element={<Dyo />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/orderby" element={<OrderBy />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/bag" element={<Bag />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/custom" element={<CustomOrder />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/pricelist" element={<Pricelist />} />
+        <Route path="/aksesoris" element={<Aksesoris />} />
+        <Route path="/anak" element={<Anak />} />
+        <Route path="/dewasa" element={<Dewasa />} />
+
         <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
