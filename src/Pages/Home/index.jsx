@@ -1,67 +1,103 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import Button from "../../Components/Button";
-import Card from "../../Components/Card";
+// import { Link } from "react-router-dom";
+// import Button from "../../Components/Button";
+// import Card from "../../Components/Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+// import "./styles.css";
 
 function Home() {
   return (
     <>
-      <div className="min-h-screen">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>Milestone</title>
-        </Helmet>
-        <div className="text-center space-x-2">
-          <h1>Halaman Home</h1>
-          <button className="bg-blue-500 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200">
-            Button inline
-          </button>
-          <Button Link to="/blog">
-            BUtton Compinent
-          </Button>
-          <Button>Hallo Component</Button>
-          <Button className="bg-cyan-500 focus:ring-cyan-200 hover:bg-cyan-700">
-            Blog
-          </Button>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Milestone</title>
+      </Helmet>
 
-          <Link
-            to={"/blog"}
-            className="bg-blue-500 px-6 py-2.5 rounded-full font-semibold text-white hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
+      <div className="">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Pagination]}
+          className=" py-10"
+        >
+          <SwiperSlide
+            as="div"
+            className="bg-center bg-cover items-center block"
           >
-            Blog With Link
-          </Link>
-          <div className="flex mx-5">
-            <Card />
-            <Card />
-            <Card />
-          </div>
-        </div>
-        <div className="container">
-          <div className="w-full md:w-2/3">
-            <div className="text-black py-4 sm:py-8 md:py-16">
-              <h1 className="text-xl md:text-3xl font-bold">New Revolution</h1>
-              <p className="text-base md:text-xl leading-relaxed font-light mt-4 mb-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                <Link
-                  to={"/"}
-                  className="underline decoration-sky-500 text-sky-400 font-medium"
-                >
-                  Dolorem quam
-                </Link>
-                , recusandae quis dolorum veritatis nulla, nemo consequuntur
-                temporibus quisquam expedita libero est facere ipsum laboriosam
-                eveniet itaque. Rem, dicta temporibus?
-              </p>
-              <Link
-                to={"/"}
-                className="bg-cyan-500 text-gray-900 px-6 py-2.5 rounded-xl font-medium inline-flex shadow-inner shadow-gray-400"
-              >
-                Browse
-              </Link>
-            </div>
-          </div>
-        </div>
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+          <SwiperSlide as="div" className="bg-center bg-cover w-80 h-80">
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+          <SwiperSlide as="div" className="bg-center bg-cover w-80 h-80">
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+          <SwiperSlide as="div" className="bg-center bg-cover w-80 h-80">
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+          <SwiperSlide as="div" className="bg-center bg-cover w-80 h-80">
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+          <SwiperSlide as="div" className="bg-center bg-cover w-80 h-80">
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+          <SwiperSlide as="div" className="bg-center bg-cover w-80 h-80">
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+          <SwiperSlide as="div" className="bg-center bg-cover w-80 h-80">
+            <img
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              alt="slide"
+              className="block w-96"
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </>
   );
