@@ -5,6 +5,7 @@ import MobileNav from "./MobileNav";
 import { Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import Line from "./Line";
+import logo from "../assets/logo/logo-dark.png";
 
 export default function Navbar() {
   const auth = {
@@ -13,6 +14,7 @@ export default function Navbar() {
       name: "Dwinawan Susilo",
     },
   };
+
   return (
     <>
       <div className="bg-gray-900">
@@ -22,10 +24,11 @@ export default function Navbar() {
             <nav className="flex items-center justify-between">
               <div className="flex items-center gap-x-2">
                 <NavLink to={"/"} className="font-semibold text-md mr-6">
-                  milestone
+                  <img src={logo} alt="logo" className="h-9 rounded-full" />
                 </NavLink>
                 <NavLink to={"/dyo"}>DYO</NavLink>
                 {/* Shop */}
+
                 <Menu as={"div"} className="relative inline-block text-left">
                   {({ open }) => (
                     <>
@@ -53,26 +56,26 @@ export default function Navbar() {
                         <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
                           <Menu.Item>
                             <Link
-                              to="/"
+                              to="/dewasa"
                               className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
                             >
-                              Pricelist
+                              Dewasa
                             </Link>
                           </Menu.Item>
                           <Menu.Item>
                             <Link
-                              to="/"
+                              to="/anak"
                               className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
                             >
-                              Custom Order
+                              Anak
                             </Link>
                           </Menu.Item>
                           <Menu.Item>
                             <Link
-                              to="/"
+                              to="/aksesoris"
                               className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
                             >
-                              Catalog
+                              Aksesoris
                             </Link>
                           </Menu.Item>
                         </Menu.Items>
@@ -80,6 +83,7 @@ export default function Navbar() {
                     </>
                   )}
                 </Menu>
+
                 {/* End Shop */}
 
                 {/* Order by */}
@@ -110,7 +114,7 @@ export default function Navbar() {
                         <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
                           <Menu.Item>
                             <Link
-                              to="/"
+                              to="/pricelist"
                               className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
                             >
                               Pricelist
@@ -118,7 +122,7 @@ export default function Navbar() {
                           </Menu.Item>
                           <Menu.Item>
                             <Link
-                              to="/"
+                              to="/custom"
                               className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
                             >
                               Custom Order
@@ -126,7 +130,7 @@ export default function Navbar() {
                           </Menu.Item>
                           <Menu.Item>
                             <Link
-                              to="/"
+                              to="/catalog"
                               className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
                             >
                               Catalog
