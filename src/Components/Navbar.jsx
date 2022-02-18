@@ -11,7 +11,7 @@ export default function Navbar() {
   const auth = {
     check: true,
     user: {
-      name: "Dwinawan Susilo",
+      name: "Nama User",
     },
   };
 
@@ -219,9 +219,14 @@ export default function Navbar() {
                     </Menu>
                     {/* End Menu Profile (Login Session) */}
                   </div>
-                  <NavLink to={"/bag"}>
-                    <FaShoppingBag size={20} />
-                  </NavLink>
+                  <div className="flex items-center">
+                    <NavLink to={"/bag"} className={"relative"}>
+                      <FaShoppingBag size={20} />
+                      <div className="absolute top-0 right-1 px-1.5 py-0.5 bg-red-600 rounded-full text-[0.5rem] font-semibold">
+                        2
+                      </div>
+                    </NavLink>
+                  </div>
                   <NavLink to={"/"}>
                     <FaRegMoon size={20} />
                   </NavLink>
