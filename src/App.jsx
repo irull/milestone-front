@@ -21,7 +21,7 @@ import Dewasa from "./Pages/Shop/Dewasa";
 
 WebFont.load({
   google: {
-    families: ["Poppins:200,300,400,500,600", "sans-serif"],
+    families: ["Poppins:200,300,400,500,600,700", "sans-serif"],
   },
 });
 
