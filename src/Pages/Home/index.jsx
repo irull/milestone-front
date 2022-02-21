@@ -9,7 +9,9 @@ function Home() {
         <meta charSet="utf-8" />
         <title>Milestone</title>
       </Helmet>
-      <Carousel />
+      <div className="z-0">
+        <Carousel />
+      </div>
     </>
   );
 }
