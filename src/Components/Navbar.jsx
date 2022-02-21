@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="bg-gray-900">
+      <div className="bg-gray-900 relative z-10">
         <MobileNav />
         <div className="hidden lg:block border-b border-white/10 py-1">
           <div className="container">
@@ -53,7 +53,7 @@ export default function Navbar() {
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
                       >
-                        <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
+                        <Menu.Items className="absolute right-0 w-40 mt-3.5 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
                           <Menu.Item>
                             <Link
                               to="/dewasa"
@@ -111,7 +111,7 @@ export default function Navbar() {
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
                       >
-                        <Menu.Items className="absolute right-0 w-40 mt-2 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
+                        <Menu.Items className="absolute right-0 w-40 mt-3.5 origin-top-right bg-gray-900  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
                           <Menu.Item>
                             <Link
                               to="/pricelist"
@@ -121,12 +121,24 @@ export default function Navbar() {
                             </Link>
                           </Menu.Item>
                           <Menu.Item>
-                            <Link
-                              to="/custom"
+                            {/* <Link
+                              to={{
+                                pathname:
+                                  "https://api.whatsapp.com/send?phone=6281807830285&text=Halo%20saya%20ingin%20pesan%20kaos",
+                              }}
                               className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                              target="_blank"
                             >
                               Custom Order
-                            </Link>
+                            </Link> */}
+                            <a
+                              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/40 flex"
+                              target="_blank"
+                              rel="noreferrer"
+                              href="https://api.whatsapp.com/send?phone=6281290000520&text=Halo%20saya%20ingin%20pesan%20kaos%20custom"
+                            >
+                              Custom Order
+                            </a>
                           </Menu.Item>
                           <Menu.Item>
                             <Link
@@ -178,7 +190,7 @@ export default function Navbar() {
                             leaveFrom="opacity-100 translate-y-0"
                             leaveTo="opacity-0 translate-y-1"
                           >
-                            <Menu.Items className="absolute right-0 w-52 mt-2 origin-top-right bg-gray-900 d rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
+                            <Menu.Items className="absolute right-0 w-52 mt-3.5 origin-top-right bg-gray-900 d rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm font-medium">
                               <Menu.Item>
                                 <Link
                                   to="/"
