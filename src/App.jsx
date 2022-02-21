@@ -28,7 +28,9 @@ WebFont.load({
 function App() {
   return (
     <div className="App font-sans bg-gray-200 min-h-screen">
-      <Navbar />
+      <div className="z-10">
+        <Navbar />
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dyo" element={<Dyo />} />
