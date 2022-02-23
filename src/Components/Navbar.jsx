@@ -9,7 +9,7 @@ import logo from "../assets/logo/logo-dark.png";
 
 export default function Navbar() {
   const auth = {
-    check: true,
+    check: false,
     user: {
       name: "Nama User",
     },
