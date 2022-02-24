@@ -55,11 +55,11 @@ export default function Index() {
 
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 antialiased tracking-tighter text-gray-800">
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 antialiased tracking-tighter text-gray-800">
         <div className="md:w-1/2.5">
           <form onSubmit={loginHandler}>
-            <div className="bg-white p-6 rounded-2xl shadow">
-              <h1 className="font-semibold text-2xl mb-5 text-center text-gray-600 tracking-wider">
+            <div className="bg-gray-800 p-6 rounded-2xl shadow">
+              <h1 className="font-semibold text-2xl mb-5 text-center text-gray-300 tracking-wider">
                 Login
               </h1>
               {validation.message && (
@@ -67,10 +67,10 @@ export default function Index() {
                   {validation.message}
                 </div>
               )}
-              <div className="mb-5">
+              {/* <div className="mb-5">
                 <label
                   htmlFor="email"
-                  className="block mb-2 font-medium text-sm tracking-wider text-gray-500"
+                  className="block mb-2 font-medium text-sm tracking-wider text-gray-300"
                 >
                   Email
                 </label>
@@ -78,11 +78,39 @@ export default function Index() {
                   type="email"
                   name="email"
                   id="email"
-                  className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
+                  className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm peer..."
                   placeholder="email@mail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                  Masukkan Email yang valid
+                </p>
+                {validation.email && (
+                  <div className="bg-red-500/75 text-white py-2 px-4 rounded font-light text-sm tracking-wider">
+                    {validation.email[0]}
+                  </div>
+                )}
+              </div> */}
+              <div className="mb-0">
+                <label className="block">
+                  <span className="block font-medium text-sm tracking-wider text-gray-300 mb-2">
+                    Email
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="peer ... border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
+                    placeholder="name@mail.com"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm tracking-wider">
+                    Masukkan email yang valid.
+                  </p>
+                </label>
                 {validation.email && (
                   <div className="bg-red-500/75 text-white py-2 px-4 rounded font-light text-sm tracking-wider">
                     {validation.email[0]}
@@ -92,7 +120,7 @@ export default function Index() {
               <div className="mb-2">
                 <label
                   htmlFor="password"
-                  className="block mb-2 font-medium text-sm tracking-wider text-gray-500"
+                  className="block mb-2 font-medium text-sm tracking-wider text-gray-300"
                 >
                   Password
                 </label>
@@ -100,8 +128,9 @@ export default function Index() {
                   type="password"
                   name="password"
                   id="password"
-                  className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
+                  className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm placeholder:"
                   placeholder="******"
+                  required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -119,7 +148,7 @@ export default function Index() {
                       className="accent-cyan-500 mr-2"
                     />
                     <label
-                      className="text-gray-500 font-medium text-sm tracking-wider"
+                      className="text-gray-300 font-medium text-sm tracking-wider"
                       htmlFor="remember"
                     >
                       Remember me
@@ -213,7 +242,7 @@ export default function Index() {
                 <div className="flex flex-col space-y-5">
                   <span className="flex items-center justify-center space-x-2 mt-3">
                     <span className="h-px bg-gray-300 md:w-32"></span>
-                    <span className=" text-gray-500 font-medium text-sm tracking-tight">
+                    <span className=" text-gray-300 font-medium text-sm tracking-tight">
                       or login with
                     </span>
                     <span className="h-px bg-gray-300 md:w-32"></span>
@@ -230,7 +259,7 @@ export default function Index() {
                     </button>
                   </div>
                 </div>
-                <p className="pt-5 text-gray-500 font-medium text-sm tracking-tight">
+                <p className="pt-5 text-gray-300 font-medium text-sm tracking-tight">
                   Don't have an account?
                   <Link to="/register" className="text-cyan-500 pl-1">
                     Register
