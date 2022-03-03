@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/effect-coverflow";
 
-export default function Carousel() {
+export default function CarouselMobile() {
   return (
     <>
       <Swiper
@@ -22,41 +22,40 @@ export default function Carousel() {
         effect="coverflow"
         centeredSlides="true"
         spaceBetween={5}
-        slidesPerView={5}
+        slidesPerView={1}
         pagination={{ dynamicBullets: true }}
         loop="true"
       >
-        <SwiperSlide className="cursor-move group relative">
+        <SwiperSlide>
           <img
             src="https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
             alt=""
-            className="absolute group-hover:scale-95 group-hover:rotate-1 group-hover:rounded-xl duration-500 transition  "
           />
         </SwiperSlide>
-        <SwiperSlide className="cursor-move group relative">
+        <SwiperSlide>
           <img
             src="https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
             alt=""
-            className="absolute group-hover:scale-95 group-hover:rotate-1 group-hover:rounded-xl duration-500 transition  "
           />
         </SwiperSlide>
-        <SwiperSlide className="cursor-move group relative">
+        <SwiperSlide>
           <img
             src="https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
             alt=""
-            className="absolute group-hover:scale-95 group-hover:rotate-1 group-hover:rounded-xl duration-500 transition  "
           />
         </SwiperSlide>
-
-        <div className="relative hidden">
-          <SwiperSlide className="cursor-move group absolute">
-            <img
-              src="https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-              alt=""
-              className=" group-hover:scale-95 group-hover:rotate-1 group-hover:rounded-xl duration-500 transition  "
-            />
-          </SwiperSlide>
-        </div>
+        <SwiperSlide>
+          <img
+            src="https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+            alt=""
+          />
+        </SwiperSlide>
       </Swiper>
     </>
   );

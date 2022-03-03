@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { RiMenu4Fill } from "react-icons/ri";
-import { FaRegMoon, FaShoppingBag, FaAngleDown } from "react-icons/fa";
+import { FaShoppingBag, FaAngleDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Line from "./Line";
+import Toggle from "./Toggle";
 
 export default function MobileNav() {
   return (
@@ -14,9 +15,9 @@ export default function MobileNav() {
       <Link to="/" className="font-semibold text-md text-white">
         milestone
       </Link>
-      <div className="flex items-center">
-        <FaRegMoon size={20} className="text-white mr-3" />
-        <FaShoppingBag size={23} className="text-white mr-3" />
+      <div className="flex items-center gap-2">
+        <Toggle />
+        <FaShoppingBag size={23} className="text-white" />
         <Menu.Button className="hover:animate-pulse">
           <RiMenu4Fill size={30} className="text-white focus:outline-none" />
         </Menu.Button>
@@ -32,7 +33,7 @@ export default function MobileNav() {
       >
         <Menu.Items
           as="div"
-          className="absolute bg-gray-900 top-0 rounded-b-2xl left-0 right-0 mr-auto ml-auto  mt-12 py-1 w-full overflow-hidden text-sm font-medium"
+          className="absolute bg-gray-900 top-1.5 rounded-xl left-0 right-0 mr-2 ml-2  mt-12 py-2 overflow-hidden text-sm font-medium"
         >
           <Menu.Item>
             <Link

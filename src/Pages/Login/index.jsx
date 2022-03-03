@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -15,6 +15,15 @@ export default function Index() {
 
   //define history
   const history = useNavigate();
+
+  //hook useEffect
+  useEffect(() => {
+    //check token
+    if (localStorage.getItem("token")) {
+      //redirect page
+      history("/");
+    }
+  }, []);
 
   //function "loginHandler"
   const loginHandler = async (e) => {
@@ -33,7 +42,7 @@ export default function Index() {
       .then((response) => {
         //set token on localstorage
         localStorage.setItem("token", response.data.token);
-        //redirect to dashboard
+        //redirect to
         history("/");
       })
       .catch((error) => {
@@ -67,31 +76,7 @@ export default function Index() {
                   {validation.message}
                 </div>
               )}
-              {/* <div className="mb-5">
-                <label
-                  htmlFor="email"
-                  className="block mb-2 font-medium text-sm tracking-wider text-gray-300"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm peer..."
-                  placeholder="email@mail.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                  Masukkan Email yang valid
-                </p>
-                {validation.email && (
-                  <div className="bg-red-500/75 text-white py-2 px-4 rounded font-light text-sm tracking-wider">
-                    {validation.email[0]}
-                  </div>
-                )}
-              </div> */}
+
               <div className="mb-0">
                 <label className="block">
                   <span className="block font-medium text-sm tracking-wider text-gray-300 mb-2">
@@ -101,15 +86,12 @@ export default function Index() {
                     type="email"
                     name="email"
                     id="email"
-                    className="peer ... border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
+                    className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm mb-4 invalid:text-pink-500 invalid:focus:ring-pink-500 invalid:focus:border-pink-500"
                     placeholder="name@mail.com"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                  <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm tracking-wider">
-                    Masukkan email yang valid.
-                  </p>
                 </label>
                 {validation.email && (
                   <div className="bg-red-500/75 text-white py-2 px-4 rounded font-light text-sm tracking-wider">

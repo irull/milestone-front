@@ -1,15 +1,16 @@
 import React, { Fragment } from "react";
-import { FaShoppingBag, FaAngleDown, FaRegMoon } from "react-icons/fa";
+import { FaShoppingBag, FaAngleDown } from "react-icons/fa";
 import NavLink from "./NavLink";
 import MobileNav from "./MobileNav";
 import { Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import Line from "./Line";
 import logo from "../assets/logo/logo-dark.png";
+import Toggle from "./Toggle";
 
 export default function Navbar() {
   const auth = {
-    check: false,
+    check: true,
     user: {
       name: "Nama User",
     },
@@ -239,9 +240,7 @@ export default function Navbar() {
                       </div>
                     </NavLink>
                   </div>
-                  <NavLink to={"/"}>
-                    <FaRegMoon size={20} />
-                  </NavLink>
+                  <Toggle />
                 </div>
               ) : (
                 // menu login (session not login)
@@ -255,9 +254,7 @@ export default function Navbar() {
                   <NavLink to={"/bag"}>
                     <FaShoppingBag size={20} />
                   </NavLink>
-                  <NavLink to={"/"}>
-                    <FaRegMoon size={20} />
-                  </NavLink>
+                  <Toggle />
                 </div>
               )}
             </nav>

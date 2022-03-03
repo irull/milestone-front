@@ -27,8 +27,8 @@ WebFont.load({
 
 function App() {
   return (
-    <div className="App font-sans bg-gray-900">
-      <div className="z-10">
+    <div className="App font-sans bg-gray-900 h-full relative ">
+      <div className="z-50 fixed top-0 left-0 right-0">
         <Navbar />
       </div>
       <Routes>

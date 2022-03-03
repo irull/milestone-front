@@ -86,7 +86,7 @@ export default function Index() {
                   type="email"
                   name="email"
                   id="email"
-                  className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm"
+                  className="border w-full px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition duration-200 shadow-sm invalid:text-pink-500 invalid:focus:ring-pink-500 invalid:focus:border-pink-500"
                   placeholder="email@mail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
